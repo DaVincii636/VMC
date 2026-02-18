@@ -17,10 +17,17 @@ var backTop = document.getElementById('backToTop');
 if (backTop) {
     backTop.addEventListener('click', function (e) {
         e.preventDefault();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        // Scroll slightly negative to ensure we're at absolute top
+        window.scrollTo({ 
+            top: -100, // Negative value forces to true top
+            behavior: 'smooth' 
+        });
+        // Then immediately snap to 0 after scroll completes
+        setTimeout(function() {
+            window.scrollTo({ top: 0, behavior: 'auto' });
+        }, 500);
     });
 }
-        
         const targetSection = document.getElementById(targetId);
         
         if (targetSection) {
