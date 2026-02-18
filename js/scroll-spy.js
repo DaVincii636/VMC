@@ -12,13 +12,14 @@ document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
         const targetId = href.substring(1);
         
         // Special case for "back to top" - scroll to absolute top
-        if (targetId === 'home' && this.id === 'backToTop') {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-            return;
-        }
+        /* ── BACK TO TOP ── */
+var backTop = document.getElementById('backToTop');
+if (backTop) {
+    backTop.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
         
         const targetSection = document.getElementById(targetId);
         
