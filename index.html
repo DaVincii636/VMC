@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vincent Martin Canillas - QCU Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="css/site.css" rel="stylesheet" />
+</head>
+<body data-page="home">
+
+    <!-- DESKTOP NAVBAR -->
+    <nav class="navbar">
+        <a href="#home" class="nav-brand">
+            <span class="brand-dot"></span>
+            Vincent Martin Canillas
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home" data-section="home">Home</a></li>
+            <li><a href="#about" data-section="about">About</a></li>
+            <li><a href="#grades" data-section="grades">Grades</a></li>
+            <li><a href="#skills" data-section="skills">Skills</a></li>
+            <li><a href="#contact" data-section="contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- MOBILE FLOATING BOTTOM NAV -->
+    <nav class="mobile-bottom-nav" aria-label="Mobile navigation">
+        <a href="#home" class="mobile-tab-item active" data-section="home">
+            <span class="mobile-tab-icon">
+                <svg viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H5a1 1 0 01-1-1V9.5z"/><path d="M9 21V12h6v9"/></svg>
+            </span>
+            <span class="mobile-tab-label">Home</span>
+        </a>
+        <a href="#about" class="mobile-tab-item" data-section="about">
+            <span class="mobile-tab-icon">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+            </span>
+            <span class="mobile-tab-label">About</span>
+        </a>
+        <a href="#grades" class="mobile-tab-item" data-section="grades">
+            <span class="mobile-tab-icon">
+                <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M8 10h8M8 14h5"/></svg>
+            </span>
+            <span class="mobile-tab-label">Grades</span>
+        </a>
+        <a href="#skills" class="mobile-tab-item" data-section="skills">
+            <span class="mobile-tab-icon">
+                <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </span>
+            <span class="mobile-tab-label">Skills</span>
+        </a>
+        <a href="#contact" class="mobile-tab-item" data-section="contact">
+            <span class="mobile-tab-icon">
+                <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            </span>
+            <span class="mobile-tab-label">Contact</span>
+        </a>
+    </nav>
+
+    <!-- ========================================
+         SECTION 1: HOME
+         ======================================== -->
+    <div id="home" class="page-section">
+        <div id="homeSection">
+            <div class="home-inner">
+                <div class="home-layout">
+                    <div>
+                        <div class="home-hey">HEY! I AM</div>
+                        <h1 class="home-name">
+                            Vincent Martin
+                            <span class="grad-text">Torres Canillas</span>
+                        </h1>
+                        <div class="type-wrap">
+                            I'm a <span class="type-cursor" id="typeTarget"></span>
+                        </div>
+                        <p class="home-sub">
+                            A 2nd year BSIT student at Quezon City University with a passion for UI/UX Design
+                            and building clean, user-friendly digital experiences.
+                        </p>
+                        <div class="home-btns">
+                            <a href="#about" class="btn-grad">About Me</a>
+                            <a href="#contact" class="btn-outline">Contact Me</a>
+                        </div>
+                    </div>
+
+                    <div class="home-card">
+                        <div class="card-avatar">
+                            <img src="images/Mep.png" alt="Vincent" />
+                        </div>
+                        <h3>Vincent Martin Torres Canillas</h3>
+                        <p class="sub">BSIT Student · QCU</p>
+                        <div class="c-row"><span class="k">Student No.</span><span class="v">24-1433</span></div>
+                        <div class="c-row"><span class="k">Year Level</span><span class="v">2nd Year</span></div>
+                        <div class="c-row"><span class="k">Semester</span><span class="v">2nd Sem AY 2025–2026</span></div>
+                        <div class="c-row"><span class="k">GWA</span><span class="v">1.50</span></div>
+                        <div class="c-row"><span class="k">Status</span><span class="v">🎵Single</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================
+         SECTION 2: ABOUT
+         ======================================== -->
+    <section id="about" class="section page-section">
+        <div class="section-tag">Who I Am</div>
+        <h2 class="section-title">About <span>Me</span></h2>
+        <div class="section-line"></div>
+
+        <div class="about-layout">
+            <div class="about-photo fade-in">
+                <img src="images/MEE.jpg" alt="Vincent" />
+            </div>
+
+            <div class="fade-in">
+                <table class="info-tbl">
+                    <tr><td class="k">Full Name</td><td class="v">Vincent Martin Torres Canillas</td></tr>
+                    <tr><td class="k">Student No.</td><td class="v">24-1433</td></tr>
+                    <tr><td class="k">Course</td><td class="v">BS Information Technology</td></tr>
+                    <tr><td class="k">College</td><td class="v">BSIT · QCU Main Campus</td></tr>
+                    <tr><td class="k">Year Level</td><td class="v">2nd Year · 2nd Semester</td></tr>
+                    <tr><td class="k">Age</td><td class="v">19 years old</td></tr>
+                    <tr><td class="k">Email</td><td class="v">canillas.vincentmartin.torres@gmail.com</td></tr>
+                    <tr><td class="k">Contact No.</td><td class="v">0970 742 8558</td></tr>
+                    <tr><td class="k">Scholarship</td><td class="v">QCYDO (Academic)</td></tr>
+                </table>
+
+                <div class="about-bio">
+                    I'm a 2nd year BSIT student at Quezon City University with a genuine passion for UI/UX Design
+                    and Java programming. I enjoy creating clean and user-friendly digital experiences and
+                    continuously learning new things. Outside of school, I'm into photography, music, and mobile games.
+                </div>
+
+                <div style="margin-top:24px; display:flex; flex-direction:column; gap:10px;">
+                    <a href="#grades" class="btn-grad">View Grades</a>
+                    <a href="#contact" class="btn-outline">Contact Me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECTION 3: GRADES
+         ======================================== -->
+   <!-- GRADES SECTION -->
+    <section id="gradesSection" class="section">
+        <div class="section-tag">Academic Record</div>
+        <h2 class="section-title">Subjects <span>&amp; Grades</span></h2>
+        <div class="section-line"></div>
+
+        <!-- Summary Card (updates dynamically) -->
+        <div class="grades-summary-card fade-in">
+            <h4>📊 Academic Summary</h4>
+            <div class="sum-grid">
+                <div class="sum-item">
+                    <div class="sv" id="sumGwa">1.50</div>
+                    <div class="sl">GWA</div>
+                </div>
+                <div class="sum-item">
+                    <div class="sv" id="sumSubjects">7</div>
+                    <div class="sl">Subjects</div>
+                </div>
+                <div class="sum-item">
+                    <div class="sv" id="sumUnits">20</div>
+                    <div class="sl">Units</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Semester Selector -->
+        <div class="grades-selector-wrap fade-in">
+            <label>Viewing</label>
+            <select class="grades-select" id="semSelect" onchange="showSem(this.value)">
+                <option value="y2s2" selected>2nd Year · 2nd Semester</option>
+                <option value="y2s1">2nd Year · 1st Semester</option>
+                <option value="y1s2">1st Year · 2nd Semester</option>
+                <option value="y1s1">1st Year · 1st Semester</option>
+            </select>
+        </div>
+
+        <!-- ── 2nd Year · 2nd Semester (DEFAULT) ── -->
+        <div class="sem-panel active fade-in" id="panel-y2s2">
+            <div class="sem-block">
+                <div class="sem-head">
+                    2nd Year · 2nd Semester
+                    <span class="sem-tag">AY 2025–2026</span>
+                </div>
+                <table class="g-tbl">
+                    <thead>
+                        <tr>
+                            <th>Course Code</th>
+                            <th>Course Description</th>
+                            <th>Units</th>
+                            <th>Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>CC106</td>  <td>Applications Development</td>        <td>3</td><td><span class="gp gp-ip">IP</span></td></tr>
+                        <tr><td>CC107</td>  <td>Integrative Programming</td>          <td>3</td><td><span class="gp gp-ip">IP</span></td></tr>
+                        <tr><td>NET103</td> <td>Networking 3</td>                     <td>3</td><td><span class="gp gp-ip">IP</span></td></tr>
+                        <tr><td>PE4</td>    <td>Team Sports</td>                      <td>2</td><td><span class="gp gp-ip">IP</span></td></tr>
+                        <tr><td>IS105</td>  <td>Software Engineering</td>             <td>3</td><td><span class="gp gp-ip">IP</span></td></tr>
+                        <tr><td>GE3</td>    <td>Science, Technology &amp; Society</td><td>3</td><td><span class="gp gp-ip">IP</span></td></tr>
+                        <tr><td>NSTP2</td>  <td>National Service Training Program 2</td><td>3</td><td><span class="gp gp-ip">IP</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ── 2nd Year · 1st Semester ── -->
+        <div class="sem-panel fade-in" id="panel-y2s1">
+            <div class="sem-block">
+                <div class="sem-head">
+                    2nd Year · 1st Semester
+                    <span class="sem-tag">AY 2024–2025</span>
+                </div>
+                <table class="g-tbl">
+                    <thead>
+                        <tr>
+                            <th>Course Code</th>
+                            <th>Course Description</th>
+                            <th>Units</th>
+                            <th>Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>HUM1</td>   <td>Art Appreciation</td>               <td>3</td><td><span class="gp gp-c">1.50</span></td></tr>
+                        <tr><td>CC104</td>  <td>Data Structures and Algorithms</td>  <td>3</td><td><span class="gp gp-c">1.50</span></td></tr>
+                        <tr><td>PE3</td>    <td>Individual and Dual Sports</td>      <td>2</td><td><span class="gp gp-a">1.25</span></td></tr>
+                        <tr><td>CC105</td>  <td>Information Management</td>          <td>3</td><td><span class="gp gp-c">1.50</span></td></tr>
+                        <tr><td>NET102</td> <td>Networking 2</td>                    <td>3</td><td><span class="gp gp-c">1.50</span></td></tr>
+                        <tr><td>PF101</td>  <td>Object-Oriented Programming</td>     <td>3</td><td><span class="gp gp-c">1.50</span></td></tr>
+                        <tr><td>IS104</td>  <td>Systems Analysis and Design</td>     <td>3</td><td><span class="gp gp-b">1.75</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ── 1st Year · 2nd Semester ── -->
+        <div class="sem-panel fade-in" id="panel-y1s2">
+            <div class="sem-block">
+                <div class="sem-head">
+                    1st Year · 2nd Semester
+                    <span class="sem-tag">AY 2024–2025</span>
+                </div>
+                <table class="g-tbl">
+                    <thead>
+                        <tr>
+                            <th>Course Code</th>
+                            <th>Course Description</th>
+                            <th>Units</th>
+                            <th>Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>CC103</td>      <td>Intermediate Programming</td>                    <td>3</td><td><span class="gp gp-c">1.50</span></td></tr>
+                        <tr><td>NSTP2</td>      <td>National Service Training Program 2</td>         <td>3</td><td><span class="gp gp-a">1.25</span></td></tr>
+                        <tr><td>NET101</td>     <td>Networking 1</td>                                <td>3</td><td><span class="gp gp-c">1.50</span></td></tr>
+                        <tr><td>GEE3</td>       <td>Philippine Popular Culture</td>                  <td>3</td><td><span class="gp gp-c">1.50</span></td></tr>
+                        <tr><td>PT101</td>      <td>Platform Technologies</td>                       <td>3</td><td><span class="gp gp-c">1.50</span></td></tr>
+                        <tr><td>ENG1</td>       <td>Purposive Communication</td>                     <td>3</td><td><span class="gp gp-c">1.50</span></td></tr>
+                        <tr><td>PE2</td>        <td>Rhythmic Activities</td>                         <td>2</td><td><span class="gp gp-a">1.25</span></td></tr>
+                        <tr><td>SCI1</td>       <td>Science, Technology and Society</td>             <td>3</td><td><span class="gp gp-b">2.00</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ── 1st Year · 1st Semester ── -->
+        <div class="sem-panel fade-in" id="panel-y1s1">
+            <div class="sem-block">
+                <div class="sem-head">
+                    1st Year · 1st Semester
+                    <span class="sem-tag">AY 2023–2024</span>
+                </div>
+                <table class="g-tbl">
+                    <thead>
+                        <tr>
+                            <th>Course Code</th>
+                            <th>Course Description</th>
+                            <th>Units</th>
+                            <th>Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>CC102</td>  <td>Fundamentals of Programming</td>                   <td>3</td><td><span class="gp gp-c">1.50</span></td></tr>
+                        <tr><td>GEE1</td>  <td>Gender and Society</td>                             <td>3</td><td><span class="gp gp-a">1.25</span></td></tr>
+                        <tr><td>CC101</td> <td>Introduction to Computing</td>                      <td>3</td><td><span class="gp gp-b">2.00</span></td></tr>
+                        <tr><td>MATH1</td>    <td>Mathematics in the Modern World</td>             <td>3</td><td><span class="gp gp-b">1.75</span></td></tr>
+                        <tr><td>NSTP1</td>    <td>National Service Training Program 1</td>         <td>3</td><td><span class="gp gp-c">1.50</span></td></tr>
+                        <tr><td>GEE2</td>  <td>People and the Earth's Ecosystems</td>              <td>3</td><td><span class="gp gp-c">1.50</span></td></tr>
+                        <tr><td>PE1</td>  <td>Physical Fitness and Wellness</td>                   <td>2</td><td><span class="gp gp-a">1.25</span></td></tr>
+                        <tr><td>WS101</td>  <td>Web Systems and Technologies 1</td>                <td>3</td><td><span class="gp gp-b">1.75</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ========================================
+         SECTION 4: SKILLS
+         ======================================== -->
+    <section id="skills" class="section page-section">
+        <div class="section-tag">What I Bring</div>
+        <h2 class="section-title">Skills <span>&amp; Talents</span></h2>
+        <div class="section-line"></div>
+
+        <div class="skills-layout">
+            <div class="fade-in">
+                <div class="skill-group-label">💻 Technical Skills</div>
+
+                <div class="sk-item">
+                    <div class="sk-top">
+                        <span>UI/UX Design</span>
+                        <span class="pct">85%</span>
+                    </div>
+                    <div class="sk-track">
+                        <div class="sk-fill" data-width="85%"></div>
+                    </div>
+                </div>
+
+                <div class="sk-item">
+                    <div class="sk-top">
+                        <span>Java Programming</span>
+                        <span class="pct">75%</span>
+                    </div>
+                    <div class="sk-track">
+                        <div class="sk-fill" data-width="75%"></div>
+                    </div>
+                </div>
+
+                <div class="sk-item">
+                    <div class="sk-top">
+                        <span>HTML/CSS</span>
+                        <span class="pct">90%</span>
+                    </div>
+                    <div class="sk-track">
+                        <div class="sk-fill" data-width="90%"></div>
+                    </div>
+                </div>
+
+                <div class="sk-item">
+                    <div class="sk-top">
+                        <span>JavaScript</span>
+                        <span class="pct">70%</span>
+                    </div>
+                    <div class="sk-track">
+                        <div class="sk-fill" data-width="70%"></div>
+                    </div>
+                </div>
+
+                <div class="sk-item">
+                    <div class="sk-top">
+                        <span>Database Management</span>
+                        <span class="pct">80%</span>
+                    </div>
+                    <div class="sk-track">
+                        <div class="sk-fill" data-width="80%"></div>
+                    </div>
+                </div>
+
+                <div class="skill-group-label">🎨 Creative Skills</div>
+
+                <div class="sk-item">
+                    <div class="sk-top">
+                        <span>Graphic Design</span>
+                        <span class="pct">75%</span>
+                    </div>
+                    <div class="sk-track">
+                        <div class="sk-fill" data-width="75%"></div>
+                    </div>
+                </div>
+
+                <div class="sk-item">
+                    <div class="sk-top">
+                        <span>Photography</span>
+                        <span class="pct">80%</span>
+                    </div>
+                    <div class="sk-track">
+                        <div class="sk-fill" data-width="80%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fade-in">
+                <div class="skill-group-label">🛠️ Tools & Platforms</div>
+                <div class="chip-grid">
+                    <div class="chip"><span>💻</span> Visual Studio Code</div>
+                    <div class="chip"><span>🎨</span> Figma</div>
+                    <div class="chip"><span>🖌️</span> Adobe Photoshop</div>
+                    <div class="chip"><span>📊</span> MySQL</div>
+                    <div class="chip"><span>🐙</span> Git & GitHub</div>
+                    <div class="chip"><span>☕</span> NetBeans</div>
+                    <div class="chip"><span>🔧</span> Eclipse IDE</div>
+                    <div class="chip"><span>📝</span> MS Office Suite</div>
+                </div>
+
+                <div class="skill-group-label">🌟 Soft Skills</div>
+                <div class="chip-grid">
+                    <div class="chip"><span>🤝</span> Teamwork</div>
+                    <div class="chip"><span>💬</span> Communication</div>
+                    <div class="chip"><span>🧠</span> Problem Solving</div>
+                    <div class="chip"><span>⏱️</span> Time Management</div>
+                    <div class="chip"><span>📚</span> Quick Learner</div>
+                    <div class="chip"><span>🎯</span> Attention to Detail</div>
+                    <div class="chip"><span>🔍</span> Critical Thinking</div>
+                    <div class="chip"><span>🎨</span> Digital Design</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECTION 5: CONTACT
+         ======================================== -->
+    <section id="contact" class="section page-section">
+        <div class="section-tag">Get In Touch</div>
+        <h2 class="section-title">Contact <span>Me</span></h2>
+        <div class="section-line"></div>
+
+        <div class="fade-in" style="max-width: 600px; margin: 0 auto;">
+            <div class="c-card">
+                <div class="c-ico">📧</div>
+                <div>
+                    <div class="c-lbl">Email</div>
+                    <div class="c-val">
+                        <a href="mailto:canillas.vincentmartin.torres@gmail.com">
+                            canillas.vincentmartin.torres@gmail.com
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="c-card">
+                <div class="c-ico">📱</div>
+                <div>
+                    <div class="c-lbl">Contact Number</div>
+                    <div class="c-val">0970 742 8558</div>
+                </div>
+            </div>
+
+            <div class="c-card">
+                <div class="c-ico">📍</div>
+                <div>
+                    <div class="c-lbl">Location</div>
+                    <div class="c-val">Quezon City, Metro Manila, PH</div>
+                </div>
+            </div>
+
+            <div class="c-card">
+                <div class="c-ico">🐙</div>
+                <div>
+                    <div class="c-lbl">GitHub</div>
+                    <div class="c-val">
+                        <a href="https://github.com/DaVincii636" target="_blank">
+                            @DaVincii636
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <span>&copy; <span id="footerYear"></span> Vincent Martin Torres Canillas &middot; QCU BSIT</span>
+        <span><a href="#home" id="backToTop">Back to top ↑</a></span>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/scroll-spy.js"></script>
+</body>
+</html>

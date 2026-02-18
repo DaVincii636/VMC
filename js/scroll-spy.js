@@ -1,0 +1,109 @@
+/* ============================================================
+   SCROLL SPY - Auto-highlight nav based on scroll position
+   ============================================================ */
+
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // Smooth scroll for all anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+            
+            if (targetSection) {
+                const offset = 80; // Account for fixed navbar
+                const targetPosition = targetSection.offsetTop - offset;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Scroll spy - update active nav item based on scroll position
+    const sections = document.querySelectorAll('.page-section');
+    const navLinks = document.querySelectorAll('.nav-links a[data-section]');
+    const mobileNavLinks = document.querySelectorAll('.mobile-tab-item[data-section]');
+
+    function updateActiveNav() {
+        let currentSection = '';
+        const scrollPos = window.pageYOffset + 200; // Offset for better UX
+
+        sections.forEach(function(section) {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            
+            if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                currentSection = section.getAttribute('id');
+            }
+        });
+
+        // Update desktop nav
+        navLinks.forEach(function(link) {
+            link.classList.remove('active');
+            if (link.getAttribute('data-section') === currentSection) {
+                link.classList.add('active');
+            }
+        });
+
+        // Update mobile nav
+        mobileNavLinks.forEach(function(link) {
+            link.classList.remove('active');
+            if (link.getAttribute('data-section') === currentSection) {
+                link.classList.add('active');
+            }
+        });
+    }
+
+    // Update on scroll
+    let scrollTimeout;
+    window.addEventListener('scroll', function() {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(updateActiveNav, 10);
+    });
+
+    // Update on load
+    updateActiveNav();
+
+    // Handle grades semester selector
+    const semSelect = document.getElementById('semSelect');
+    if (semSelect) {
+        semSelect.addEventListener('change', function() {
+            const selectedSem = this.value;
+            
+            // Hide all panels
+            document.querySelectorAll('.sem-panel').forEach(function(panel) {
+                panel.classList.remove('active');
+            });
+            
+            // Show selected panel
+            const targetPanel = document.querySelector('.sem-panel[data-sem="' + selectedSem + '"]');
+            if (targetPanel) {
+                targetPanel.classList.add('active');
+            }
+
+            // Update summary based on selected semester
+            updateGradeSummary(selectedSem);
+        });
+    }
+
+    // Function to update grade summary
+    function updateGradeSummary(sem) {
+        const summaries = {
+            '2nd-2nd': { gwa: '—', subjects: 7, units: 20 },
+            '2nd-1st': { gwa: '1.50', subjects: 7, units: 20 },
+            '1st-2nd': { gwa: '1.47', subjects: 8, units: 23 },
+            '1st-1st': { gwa: '1.43', subjects: 7, units: 20 }
+        };
+
+        const data = summaries[sem];
+        if (data) {
+            document.getElementById('sumGwa').textContent = data.gwa;
+            document.getElementById('sumSubjects').textContent = data.subjects;
+            document.getElementById('sumUnits').textContent = data.units;
+        }
+    }
+});
