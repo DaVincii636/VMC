@@ -12,20 +12,16 @@ document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
         const targetId = href.substring(1);
         
         // Special case for "back to top" - scroll to absolute top
-        /* ── BACK TO TOP ── */
+       /* ── BACK TO TOP ── */
 var backTop = document.getElementById('backToTop');
 if (backTop) {
     backTop.addEventListener('click', function (e) {
         e.preventDefault();
-        // Scroll slightly negative to ensure we're at absolute top
-        window.scrollTo({ 
-            top: -100, // Negative value forces to true top
-            behavior: 'smooth' 
-        });
-        // Then immediately snap to 0 after scroll completes
-        setTimeout(function() {
-            window.scrollTo({ top: 0, behavior: 'auto' });
-        }, 500);
+        e.stopPropagation();
+        
+        // Force scroll to absolute top
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0; // For Safari
     });
 }
         const targetSection = document.getElementById(targetId);
