@@ -765,3 +765,11 @@ html {
         grid-template-columns: 1fr;
     }
 }
+
+/* Fix scroll-to-top on mobile */
+@media (max-width: 900px) {
+    #homeSection {
+        min-height: auto !important;
+        padding-top: 80px !important;
+    }
+}
