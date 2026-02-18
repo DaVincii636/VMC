@@ -4,25 +4,35 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     
-    // Smooth scroll for all anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            const targetSection = document.getElementById(targetId);
+   // Smooth scroll for all anchor links
+document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const href = this.getAttribute('href');
+        const targetId = href.substring(1);
+        
+        // Special case for "back to top" - scroll to absolute top
+        if (targetId === 'home' && this.id === 'backToTop') {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+            return;
+        }
+        
+        const targetSection = document.getElementById(targetId);
+        
+        if (targetSection) {
+            const offset = 80; // Account for fixed navbar
+            const targetPosition = targetSection.offsetTop - offset;
             
-            if (targetSection) {
-                const offset = 80; // Account for fixed navbar
-                const targetPosition = targetSection.offsetTop - offset;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
     });
-
+});
     // Scroll spy - update active nav item based on scroll position
     const sections = document.querySelectorAll('.page-section');
     const navLinks = document.querySelectorAll('.nav-links a[data-section]');
