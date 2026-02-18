@@ -673,8 +673,8 @@ body {
 /* ── SHOW ONLY ON MOBILE ── */
 @media (max-width: 900px) {
     .navbar { display: none !important; }
-    .mobile-bottom-nav { display: flex !important; }
-    body { padding-bottom: 100px; }
+    .mobile-bottom-nav { display: none !important; }
+    body { padding-bottom: 20px; }
     .section { padding-top: 40px; }
     #homeSection { 
         padding-top: 40px; 
@@ -746,4 +746,22 @@ html {
 /* Ensure sections are distinct */
 #home.page-section {
     scroll-margin-top: 0;
+}
+
+/* ================================================================
+   CONTACT SECTION - GRID LAYOUT
+   ================================================================ */
+
+/* Make contact section use grid for better spacing */
+#contact .fade-in {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    max-width: 900px;
+}
+
+@media (max-width: 768px) {
+    #contact .fade-in {
+        grid-template-columns: 1fr;
+    }
 }

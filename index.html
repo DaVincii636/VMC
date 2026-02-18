@@ -27,40 +27,6 @@
         </ul>
     </nav>
 
-    <!-- MOBILE FLOATING BOTTOM NAV -->
-    <nav class="mobile-bottom-nav" aria-label="Mobile navigation">
-        <a href="#home" class="mobile-tab-item active" data-section="home">
-            <span class="mobile-tab-icon">
-                <svg viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H5a1 1 0 01-1-1V9.5z"/><path d="M9 21V12h6v9"/></svg>
-            </span>
-            <span class="mobile-tab-label">Home</span>
-        </a>
-        <a href="#about" class="mobile-tab-item" data-section="about">
-            <span class="mobile-tab-icon">
-                <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-            </span>
-            <span class="mobile-tab-label">About</span>
-        </a>
-        <a href="#grades" class="mobile-tab-item" data-section="grades">
-            <span class="mobile-tab-icon">
-                <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M8 10h8M8 14h5"/></svg>
-            </span>
-            <span class="mobile-tab-label">Grades</span>
-        </a>
-        <a href="#skills" class="mobile-tab-item" data-section="skills">
-            <span class="mobile-tab-icon">
-                <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-            </span>
-            <span class="mobile-tab-label">Skills</span>
-        </a>
-        <a href="#contact" class="mobile-tab-item" data-section="contact">
-            <span class="mobile-tab-icon">
-                <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-            </span>
-            <span class="mobile-tab-label">Contact</span>
-        </a>
-    </nav>
-
     <!-- ========================================
          SECTION 1: HOME
          ======================================== -->
@@ -147,13 +113,11 @@
     <!-- ========================================
          SECTION 3: GRADES
          ======================================== -->
-   <!-- GRADES SECTION -->
-    <section id="gradesSection" class="section">
+    <section id="grades" class="section page-section">
         <div class="section-tag">Academic Record</div>
         <h2 class="section-title">Subjects <span>&amp; Grades</span></h2>
         <div class="section-line"></div>
 
-        <!-- Summary Card (updates dynamically) -->
         <div class="grades-summary-card fade-in">
             <h4>📊 Academic Summary</h4>
             <div class="sum-grid">
@@ -172,10 +136,9 @@
             </div>
         </div>
 
-        <!-- Semester Selector -->
         <div class="grades-selector-wrap fade-in">
             <label>Viewing</label>
-            <select class="grades-select" id="semSelect" onchange="showSem(this.value)">
+            <select class="grades-select" id="semSelect">
                 <option value="y2s2" selected>2nd Year · 2nd Semester</option>
                 <option value="y2s1">2nd Year · 1st Semester</option>
                 <option value="y1s2">1st Year · 2nd Semester</option>
@@ -183,124 +146,125 @@
             </select>
         </div>
 
-        <!-- ── 2nd Year · 2nd Semester (DEFAULT) ── -->
-        <div class="sem-panel active fade-in" id="panel-y2s2">
-            <div class="sem-block">
-                <div class="sem-head">
-                    2nd Year · 2nd Semester
-                    <span class="sem-tag">AY 2025–2026</span>
+        <div class="fade-in">
+            <!-- 2nd Year, 2nd Semester -->
+            <div class="sem-panel active" data-sem="y2s2">
+                <div class="sem-block">
+                    <div class="sem-head">
+                        <span>2nd Year · 2nd Semester</span>
+                        <span class="sem-tag">AY 2025–2026</span>
+                    </div>
+                    <table class="g-tbl">
+                        <thead>
+                            <tr>
+                                <th>Course Code</th>
+                                <th>Course Description</th>
+                                <th>Units</th>
+                                <th>Grade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>CC106</td><td>Applications Development</td><td>3</td><td><span class="gp gp-ip">IP</span></td></tr>
+                            <tr><td>CC107</td><td>Integrative Programming</td><td>3</td><td><span class="gp gp-ip">IP</span></td></tr>
+                            <tr><td>NET103</td><td>Networking 3</td><td>3</td><td><span class="gp gp-ip">IP</span></td></tr>
+                            <tr><td>PE4</td><td>Team Sports</td><td>2</td><td><span class="gp gp-ip">IP</span></td></tr>
+                            <tr><td>IS105</td><td>Software Engineering</td><td>3</td><td><span class="gp gp-ip">IP</span></td></tr>
+                            <tr><td>GE3</td><td>Science, Technology &amp; Society</td><td>3</td><td><span class="gp gp-ip">IP</span></td></tr>
+                            <tr><td>NSTP2</td><td>National Service Training Program 2</td><td>3</td><td><span class="gp gp-ip">IP</span></td></tr>
+                        </tbody>
+                    </table>
                 </div>
-                <table class="g-tbl">
-                    <thead>
-                        <tr>
-                            <th>Course Code</th>
-                            <th>Course Description</th>
-                            <th>Units</th>
-                            <th>Grade</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>CC106</td>  <td>Applications Development</td>        <td>3</td><td><span class="gp gp-ip">IP</span></td></tr>
-                        <tr><td>CC107</td>  <td>Integrative Programming</td>          <td>3</td><td><span class="gp gp-ip">IP</span></td></tr>
-                        <tr><td>NET103</td> <td>Networking 3</td>                     <td>3</td><td><span class="gp gp-ip">IP</span></td></tr>
-                        <tr><td>PE4</td>    <td>Team Sports</td>                      <td>2</td><td><span class="gp gp-ip">IP</span></td></tr>
-                        <tr><td>IS105</td>  <td>Software Engineering</td>             <td>3</td><td><span class="gp gp-ip">IP</span></td></tr>
-                        <tr><td>GE3</td>    <td>Science, Technology &amp; Society</td><td>3</td><td><span class="gp gp-ip">IP</span></td></tr>
-                        <tr><td>NSTP2</td>  <td>National Service Training Program 2</td><td>3</td><td><span class="gp gp-ip">IP</span></td></tr>
-                    </tbody>
-                </table>
+            </div>
+
+            <!-- 2nd Year, 1st Semester -->
+            <div class="sem-panel" data-sem="y2s1">
+                <div class="sem-block">
+                    <div class="sem-head">
+                        <span>2nd Year · 1st Semester</span>
+                        <span class="sem-tag">AY 2024–2025</span>
+                    </div>
+                    <table class="g-tbl">
+                        <thead>
+                            <tr>
+                                <th>Course Code</th>
+                                <th>Course Description</th>
+                                <th>Units</th>
+                                <th>Grade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>HUM1</td><td>Art Appreciation</td><td>3</td><td><span class="gp gp-a">1.50</span></td></tr>
+                            <tr><td>CC104</td><td>Data Structures and Algorithms</td><td>3</td><td><span class="gp gp-a">1.50</span></td></tr>
+                            <tr><td>PE3</td><td>Individual and Dual Sports</td><td>2</td><td><span class="gp gp-a">1.25</span></td></tr>
+                            <tr><td>CC105</td><td>Information Management</td><td>3</td><td><span class="gp gp-a">1.50</span></td></tr>
+                            <tr><td>NET102</td><td>Networking 2</td><td>3</td><td><span class="gp gp-a">1.50</span></td></tr>
+                            <tr><td>PF101</td><td>Object-Oriented Programming</td><td>3</td><td><span class="gp gp-a">1.50</span></td></tr>
+                            <tr><td>IS104</td><td>Systems Analysis and Design</td><td>3</td><td><span class="gp gp-b">1.75</span></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 1st Year, 2nd Semester -->
+            <div class="sem-panel" data-sem="y1s2">
+                <div class="sem-block">
+                    <div class="sem-head">
+                        <span>1st Year · 2nd Semester</span>
+                        <span class="sem-tag">AY 2024–2025</span>
+                    </div>
+                    <table class="g-tbl">
+                        <thead>
+                            <tr>
+                                <th>Course Code</th>
+                                <th>Course Description</th>
+                                <th>Units</th>
+                                <th>Grade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>CC103</td><td>Intermediate Programming</td><td>3</td><td><span class="gp gp-a">1.50</span></td></tr>
+                            <tr><td>NSTP2</td><td>National Service Training Program 2</td><td>3</td><td><span class="gp gp-a">1.25</span></td></tr>
+                            <tr><td>NET101</td><td>Networking 1</td><td>3</td><td><span class="gp gp-a">1.50</span></td></tr>
+                            <tr><td>GEE3</td><td>Philippine Popular Culture</td><td>3</td><td><span class="gp gp-a">1.50</span></td></tr>
+                            <tr><td>PT101</td><td>Platform Technologies</td><td>3</td><td><span class="gp gp-a">1.50</span></td></tr>
+                            <tr><td>ENG1</td><td>Purposive Communication</td><td>3</td><td><span class="gp gp-a">1.50</span></td></tr>
+                            <tr><td>PE2</td><td>Rhythmic Activities</td><td>2</td><td><span class="gp gp-a">1.25</span></td></tr>
+                            <tr><td>SCI1</td><td>Science, Technology and Society</td><td>3</td><td><span class="gp gp-b">2.00</span></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 1st Year, 1st Semester -->
+            <div class="sem-panel" data-sem="y1s1">
+                <div class="sem-block">
+                    <div class="sem-head">
+                        <span>1st Year · 1st Semester</span>
+                        <span class="sem-tag">AY 2023–2024</span>
+                    </div>
+                    <table class="g-tbl">
+                        <thead>
+                            <tr>
+                                <th>Course Code</th>
+                                <th>Course Description</th>
+                                <th>Units</th>
+                                <th>Grade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>CC102</td><td>Fundamentals of Programming</td><td>3</td><td><span class="gp gp-a">1.50</span></td></tr>
+                            <tr><td>GEE1</td><td>Gender and Society</td><td>3</td><td><span class="gp gp-a">1.25</span></td></tr>
+                            <tr><td>CC101</td><td>Introduction to Computing</td><td>3</td><td><span class="gp gp-b">2.00</span></td></tr>
+                            <tr><td>MATH1</td><td>Mathematics in the Modern World</td><td>3</td><td><span class="gp gp-b">1.75</span></td></tr>
+                            <tr><td>NSTP1</td><td>National Service Training Program 1</td><td>3</td><td><span class="gp gp-a">1.50</span></td></tr>
+                            <tr><td>GEE2</td><td>People and the Earth's Ecosystems</td><td>3</td><td><span class="gp gp-a">1.50</span></td></tr>
+                            <tr><td>PE1</td><td>Physical Fitness and Wellness</td><td>2</td><td><span class="gp gp-a">1.25</span></td></tr>
+                            <tr><td>WS101</td><td>Web Systems and Technologies 1</td><td>3</td><td><span class="gp gp-b">1.75</span></td></tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
-
-        <!-- ── 2nd Year · 1st Semester ── -->
-        <div class="sem-panel fade-in" id="panel-y2s1">
-            <div class="sem-block">
-                <div class="sem-head">
-                    2nd Year · 1st Semester
-                    <span class="sem-tag">AY 2024–2025</span>
-                </div>
-                <table class="g-tbl">
-                    <thead>
-                        <tr>
-                            <th>Course Code</th>
-                            <th>Course Description</th>
-                            <th>Units</th>
-                            <th>Grade</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>HUM1</td>   <td>Art Appreciation</td>               <td>3</td><td><span class="gp gp-c">1.50</span></td></tr>
-                        <tr><td>CC104</td>  <td>Data Structures and Algorithms</td>  <td>3</td><td><span class="gp gp-c">1.50</span></td></tr>
-                        <tr><td>PE3</td>    <td>Individual and Dual Sports</td>      <td>2</td><td><span class="gp gp-a">1.25</span></td></tr>
-                        <tr><td>CC105</td>  <td>Information Management</td>          <td>3</td><td><span class="gp gp-c">1.50</span></td></tr>
-                        <tr><td>NET102</td> <td>Networking 2</td>                    <td>3</td><td><span class="gp gp-c">1.50</span></td></tr>
-                        <tr><td>PF101</td>  <td>Object-Oriented Programming</td>     <td>3</td><td><span class="gp gp-c">1.50</span></td></tr>
-                        <tr><td>IS104</td>  <td>Systems Analysis and Design</td>     <td>3</td><td><span class="gp gp-b">1.75</span></td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <!-- ── 1st Year · 2nd Semester ── -->
-        <div class="sem-panel fade-in" id="panel-y1s2">
-            <div class="sem-block">
-                <div class="sem-head">
-                    1st Year · 2nd Semester
-                    <span class="sem-tag">AY 2024–2025</span>
-                </div>
-                <table class="g-tbl">
-                    <thead>
-                        <tr>
-                            <th>Course Code</th>
-                            <th>Course Description</th>
-                            <th>Units</th>
-                            <th>Grade</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>CC103</td>      <td>Intermediate Programming</td>                    <td>3</td><td><span class="gp gp-c">1.50</span></td></tr>
-                        <tr><td>NSTP2</td>      <td>National Service Training Program 2</td>         <td>3</td><td><span class="gp gp-a">1.25</span></td></tr>
-                        <tr><td>NET101</td>     <td>Networking 1</td>                                <td>3</td><td><span class="gp gp-c">1.50</span></td></tr>
-                        <tr><td>GEE3</td>       <td>Philippine Popular Culture</td>                  <td>3</td><td><span class="gp gp-c">1.50</span></td></tr>
-                        <tr><td>PT101</td>      <td>Platform Technologies</td>                       <td>3</td><td><span class="gp gp-c">1.50</span></td></tr>
-                        <tr><td>ENG1</td>       <td>Purposive Communication</td>                     <td>3</td><td><span class="gp gp-c">1.50</span></td></tr>
-                        <tr><td>PE2</td>        <td>Rhythmic Activities</td>                         <td>2</td><td><span class="gp gp-a">1.25</span></td></tr>
-                        <tr><td>SCI1</td>       <td>Science, Technology and Society</td>             <td>3</td><td><span class="gp gp-b">2.00</span></td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <!-- ── 1st Year · 1st Semester ── -->
-        <div class="sem-panel fade-in" id="panel-y1s1">
-            <div class="sem-block">
-                <div class="sem-head">
-                    1st Year · 1st Semester
-                    <span class="sem-tag">AY 2023–2024</span>
-                </div>
-                <table class="g-tbl">
-                    <thead>
-                        <tr>
-                            <th>Course Code</th>
-                            <th>Course Description</th>
-                            <th>Units</th>
-                            <th>Grade</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>CC102</td>  <td>Fundamentals of Programming</td>                   <td>3</td><td><span class="gp gp-c">1.50</span></td></tr>
-                        <tr><td>GEE1</td>  <td>Gender and Society</td>                             <td>3</td><td><span class="gp gp-a">1.25</span></td></tr>
-                        <tr><td>CC101</td> <td>Introduction to Computing</td>                      <td>3</td><td><span class="gp gp-b">2.00</span></td></tr>
-                        <tr><td>MATH1</td>    <td>Mathematics in the Modern World</td>             <td>3</td><td><span class="gp gp-b">1.75</span></td></tr>
-                        <tr><td>NSTP1</td>    <td>National Service Training Program 1</td>         <td>3</td><td><span class="gp gp-c">1.50</span></td></tr>
-                        <tr><td>GEE2</td>  <td>People and the Earth's Ecosystems</td>              <td>3</td><td><span class="gp gp-c">1.50</span></td></tr>
-                        <tr><td>PE1</td>  <td>Physical Fitness and Wellness</td>                   <td>2</td><td><span class="gp gp-a">1.25</span></td></tr>
-                        <tr><td>WS101</td>  <td>Web Systems and Technologies 1</td>                <td>3</td><td><span class="gp gp-b">1.75</span></td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
     </section>
 
     <!-- ========================================
@@ -424,7 +388,7 @@
         <h2 class="section-title">Contact <span>Me</span></h2>
         <div class="section-line"></div>
 
-        <div class="fade-in" style="max-width: 600px; margin: 0 auto;">
+        <div class="fade-in">
             <div class="c-card">
                 <div class="c-ico">📧</div>
                 <div>

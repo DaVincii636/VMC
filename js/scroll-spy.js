@@ -93,10 +93,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Function to update grade summary
     function updateGradeSummary(sem) {
         const summaries = {
-            '2nd-2nd': { gwa: '—', subjects: 7, units: 20 },
-            '2nd-1st': { gwa: '1.50', subjects: 7, units: 20 },
-            '1st-2nd': { gwa: '1.47', subjects: 8, units: 23 },
-            '1st-1st': { gwa: '1.43', subjects: 7, units: 20 }
+            'y2s2': { gwa: '—', subjects: 7, units: 20 },
+            'y2s1': { gwa: '1.54', subjects: 7, units: 20 },
+            'y1s2': { gwa: '1.53', subjects: 8, units: 23 },
+            'y1s1': { gwa: '1.59', subjects: 8, units: 23 }
         };
 
         const data = summaries[sem];
