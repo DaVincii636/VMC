@@ -121,3 +121,24 @@ if (backTop) {
         }
     }
 });
+
+// Override back to top to force absolute top scroll
+window.addEventListener('DOMContentLoaded', function() {
+    const backToTop = document.getElementById('backToTop');
+    if (backToTop) {
+        // Remove all existing listeners by cloning
+        const newBackToTop = backToTop.cloneNode(true);
+        backToTop.parentNode.replaceChild(newBackToTop, backToTop);
+        
+        // Add fresh listener
+        newBackToTop.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Force to top
+            window.scrollTo(0, 0);
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+        });
+    }
+});
